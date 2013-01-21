@@ -1,0 +1,23 @@
+{% extends "base.htm" %}
+{% block content %}
+<p>Below you can bind a go.tilenkranjc.com/[url] url to any link from the internet. You can add a link by filling in the form below.</p>
+<hr>
+<table>
+	<tr>
+		<td>Title</td>
+		<td>Short Url</td>
+		<td>Url</td>
+		<td>Author</td>
+		<td>Date</td>
+	</tr>
+	{% for url in urls %}
+	<tr>
+		<td>{{url.name}}</td>
+		<td>{{url.shorturl}}</td>
+		<td>{{url.url}}</td>
+		<td>{{url.author}}</td>
+		<td>{{url.date}}</td>
+	</tr>
+	{% endfor %}
+</table>
+{% endblock content %}
