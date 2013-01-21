@@ -35,6 +35,8 @@ class Redirect(BaseHandler):
 		#urls = db.Query(Urls, projection=('shorturl','url'))
 		urls.filter('shorturl =',shorturl)
 		result = urls.get()
+		if result is None:
+			return webapp2.redirect('/')
 		return webapp2.redirect(str(result.url))
 		
 		
